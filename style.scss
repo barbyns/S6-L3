@@ -1,0 +1,19 @@
+/* File principale SCSS */
+@import 'reset';
+@import 'colors';
+@import 'font';
+@import 'spacings';
+@import 'buttons';
+@import 'mixins';
+@import 'animations';
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
