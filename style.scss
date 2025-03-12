@@ -17,3 +17,93 @@
 body {
   font-family: Arial, sans-serif;
 }
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #000;
+  color: white;
+  width: 100%;
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  background: url('hero-image.jpg') no-repeat center center/cover;
+  text-align: center;
+  color: white;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInMove 1s forwards;
+
+  h1 {
+    @include title-big;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 15px;
+
+    @each $color in $color-buttons {
+      .btn-#{nth($color-buttons, index($color-buttons, $color))} {
+        background-color: $color;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        transition: transform 0.3s ease;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+/* Griglia di elementi */
+.grid-container {
+  @include grid(4);
+  padding: 40px;
+  background: white;
+
+  .grid-item {
+    background: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}

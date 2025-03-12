@@ -1,0 +1,7 @@
+/* Partial: Spacings */
+@mixin spacing($type, $size) {
+    #{$type}-#{$size} {
+      #{$type}: #{$size}px;
+    }
+  }
+  
